@@ -43,9 +43,10 @@ controllerから親に渡された変数はsub view内でも使うことがで�
 - views/component に配置するのが慣例？<br>
 - 普通にhtmlを記載してもよい。例：head,header,footerなど<br>
 変数を受け取る箇所は{{}}で記載。
+### co
 
 ## < ?php ?>の代わりになるblade記述
-bladeは表示担当、演算含めた諸々の処理はcontrollerが担当。<br>
+bladeは表示担当、演算含めた諸々の処理はview composerが担当。<br>
 bladeの中での処理記述は必要最小限に。
 ### directive
 @hogehohe...@endhogehoge  最後は@end何とかになる。
@@ -56,6 +57,6 @@ bladeの中での処理記述は必要最小限に。
 - break,continue  中断終了・中断次へ  
 - <forme>タグの中に@csrfでCSRF対策
 ### 値の表示
-- {{   }}    値・変数・式・関数を{{}}で囲んで記述できる。まさに< ?php ?>の代わりになる。<br>
+- {{   }}    値・$変数・式・関数を{{}}で囲んで記述できる。まさに< ?php ?>の代わりになる。<br>
 htmlエスケープされる。
-- {!!   !!}   値・変数・式・関数を{!! !!}で囲むとhtmlエスケープされない。
+- {!!   !!}   値・$変数・式・関数を{!! !!}で囲むとhtmlエスケープされない。

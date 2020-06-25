@@ -41,11 +41,12 @@ laravelはmodel view controller
 
 ## useful functions
 ### php artisan make:hogehogeコマンド
-いろいろ自動作成してくれ便利。単純にcoding timeが減るし、余計なbugを作らずに済む便利コマンド
+適切なfolderへ適切な形式のfileを自動作成してくれ便利。単純にcoding timeが減るし、余計なbugを作らずに済む便利コマンド
 - php artisan make:controller {name}  controllerを作成
 末尾に--resourceをつけるとメソッド（初期表示、登録、変更、削除など）がついた状態で作成される
 - php artisan make:model {name}  modelを作成
 - php artisan make:migration {name}  migrationを作成
+- php artisan make:provider {name} service providerを作成111
 viewはartisanコマンドでは作れない。最初からあるwelcome.blade.phpをコピーして使う。
 
 ### その他laravlの便利機能
