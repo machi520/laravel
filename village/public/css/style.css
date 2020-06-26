@@ -2,9 +2,9 @@
 
 /* 使用カラー */
 :root {
-    --main-color:#BF8339;
-    --sub-color:#F2CC85;
-    --accent-color:#F25E7A;
+    --main-color:#6CAAF5;
+    --sub-color:#396BA8;
+    --accent-color:#F58E84;
 }
 /* 全体の設定 */
 * {
@@ -21,7 +21,7 @@ a {
 a:hover ,button:hover {
     background-color: rgba(225,225,225,0.3);
 }
-ul {
+ul , ol {
     list-style: none;
 }
 button{
@@ -34,6 +34,22 @@ button{
     display: flex;
     justify-content: space-between;
 }
+/* 基本の文字サイズ */
+@media(min-width:800px){
+    :root{
+        font-size: 18px;
+    }
+}
+@media(min-width:600px) and (max-width:799px){
+    :root{
+        font-size: 16px;
+    }
+}
+@media(max-width:599px){
+    :root{
+        font-size: 14px;
+    }
+}
 /* header */
 header {
     /* position: absolute;
@@ -41,24 +57,23 @@ header {
     left: 0;
     z-index: 100; */
     /* width: 100%; */
-    background-color:var(--main-color);
+    /* background-color:var(--main-color); */
+    border-bottom: 1px solid #ccc;
 }
 header .headA {
     display: inline-block;
     line-height: 70px;
     padding: 0 20px;
-    background-color: var(--accent-color);
-    color: #fff;
+    background-color: var(--main-color);
     font-size: 24px;
     font-weight: bold;
+    color: #fff;
 }
 header .headB a {
     padding: 1em;
-    color: #fff;
 }
 header .headC {
     font-size: 24px;
-    color: #fff;
     padding: 0 1em;
 }
 @media(min-width:768px){
@@ -123,4 +138,62 @@ footer .footB a {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+/* content */
+.post .container {
+    max-width:800px;
+    padding: 30px 10px;
+}
+.post h1 {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+}
+.post h2 {
+    padding-left: 0.5rem;
+    border-left: 0.75rem solid var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.post h3 {
+    padding-left: 0.5rem;
+    border-left: 0.75rem solid var(--accent-color);
+    margin: 2rem 0 1rem 0;
+    font-size: 1.5rem;
+}
+.post p {
+    font-size: 1rem;
+    line-height: 2rem;
+}
+.post .img {
+    max-width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+/* content bread */
+.post ol {
+    display: flex;
+}
+.post ol a {
+    padding: 0.5rem 0.5rem 0.5rem 0;
+}
+.post ol a:hover{
+    background: none;
+}
+.post ol a::after{
+    margin-left: 0.5rem;
+    content: ">";
+    color: #ccc;
+}
+.post input {
+    margin: 0 0.5rem 0 2rem;
+}
+.post form {
+    margin: 2rem 0;
+}
+.discription {
+    border: 1px solid #ccc;
+    padding: 2rem;;
 }
