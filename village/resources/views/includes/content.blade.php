@@ -22,8 +22,25 @@
         <p id="D1">日本がもし100人の村なら、この村には○人の議員たち、○人の職員が働いています。
             それ以外の村人は○人が有権者、残りの○人は立候補や投票権を持っていない人たちです。
         </p>
-
-
+        {{-- pictgram --}}
+        <table>
+            <dl>
+                <dt>国会議員</dt>
+                <dd><i class="fas fa-child"></i></dd>
+            </dl>
+            <dl>
+                <dt>首長・地方議員</dt>
+                <dd><i class="fas fa-child"></i></dd>
+            </dl>
+            <dl>
+                <dt></dt>
+                <dd></dd>
+            </dl>
+        </table>
+        {{-- map --}}
+        <div>
+            
+        </div>
         </div>
 
     </div>
