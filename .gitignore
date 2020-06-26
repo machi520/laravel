@@ -14,7 +14,7 @@ village/database
 village/package-lock.json
 village/package.json
 village/phpunit.xml
-village/public
+# village/public
 village/README.md
 # village/resources
 # village/routes

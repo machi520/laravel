@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/* 使用カラー */
+:root {
+    --main-color:#BF8339;
+    --sub-color:#F2CC85;
+    --accent-color:#F25E7A;
+}
+/* 全体の設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+a {
+    text-decoration: none;
+    color:#000;
+    display: block;
+}
+a:hover ,button:hover {
+    background-color: rgba(225,225,225,0.3);
+}
+ul {
+    list-style: none;
+}
+button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+.col2{
+    display: flex;
+    justify-content: space-between;
+}
+/* header */
+header {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100; */
+    /* width: 100%; */
+    background-color:var(--main-color);
+}
+header .headA {
+    display: inline-block;
+    line-height: 70px;
+    padding: 0 20px;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+header .headB a {
+    padding: 1em;
+    color: #fff;
+}
+header .headC {
+    font-size: 24px;
+    color: #fff;
+    padding: 0 1em;
+}
+@media(min-width:768px){
+    header .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header ul{
+        display: flex;
+    }
+    header .headC {
+        display: none;
+    }
+}
+@media(max-width:767px){
+    header .container-small{
+        display: flex;
+        justify-content: space-between;
+    }
+    header .headB {
+        display: none;
+    }
+}
+/* footer */
+footer {
+    color: #fff;
+    background-color:var(--sub-color);
+}
+footer .container{
+    padding: 40px 20px;
+}
+footer h2 {
+    border-bottom: 1px solid #fff;
+    margin-bottom: 0.5em;
+}
+footer a {
+    color: #fff;
+}
+footer .footC {
+    font-size: 12px;
+    text-align: center;
+}
+footer .footD ul {
+    display: flex;
+}
+footer .footD a {
+    font-size: 32px;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+}
+footer .footB {
+    width: 100%;
+}
+footer .footB a {
+    line-height: 2em;
+}
+@media (min-width:768px){
+    .container{
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

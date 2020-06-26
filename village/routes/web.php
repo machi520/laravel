@@ -16,10 +16,8 @@ use Illuminate\Support\Facades\Route;
 素晴らしいものを作成してください！
 */
 
+// routeを使えば、単純にurlの入力値とblade.phpフォルダ名前を分離できる。
+
 // ルートにアクセスした時
-Route::get('/', function () {
-    // 連想配列を作る
-    $data = ['title' => 'Index'];
-    // 第二引数に連想配列を設定するとviewとsub viewに変数を渡せる
-    return view('layouts.index',$data);
-});
+// そのままfunction(){view('hogehoge')};と振り分けてもよいし、web.phpは共有だから簡素にしたいので、記載を短くするためにcontroller@methodで変数設定とか演算を行って一緒にviewに渡してもよい
+Route::get('/','IndexController@index');

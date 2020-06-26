@@ -3,6 +3,9 @@
     {{-- sub viewで共通の<head>タグを読み込む --}}
     @include('includes.head')
 <body>
-    <p>hello</p>
+    @include('includes.header')
+
+
+    @include('includes.footer')
 </body>
 </html>
