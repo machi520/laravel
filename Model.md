@@ -13,7 +13,7 @@ ORM object-relational-mapping。DBを簡単に扱うための、DBとプログ�
 サーバーのSQLiteからDBをローカルにダウンロードして、編集後アップロードすることができる。
 - カラム型が5つしかなく柔軟（text,integer,null,real,blob）。
 - パスワード設定ができない。<br>
-そのためDBファイルをサーバーに置くフォルダには.htaccessファイルを置いてでアクセス制限をする。deny from allと記述。
+そのためDBファイルをサーバーに置くフォルダには.htaccessファイルを置いてアクセス制限をする。deny from allと記述。
 ### インストール
 - WindowsはSQLite webサイトの「Precompiled Binaries for Windows」からダウンロード。<br>
 zipファイルの中のsqlite3.dllをパスが設定されているフォルダへ移動（C:\Windows\System32）。
@@ -50,4 +50,14 @@ DB_PORT=3306<br>
 DB_DATABASE=laravel<br>
 DB_USERNAME=root<br>
 DB_PASSWORD=
+
+## DBクラス
+クラスの場所：vendor\laravel\framework\src\Illuminate
+- controllerにDBクラスを追加<br>
+use Illuminate\Support\Facades\DB;
+- controllerの処理actionにDB::selectを書く。引数は実行するSQL文。<br>
+$variable = DB::select('SQL');
+- 結果$variableに、レコード（stdClass object）ごとに、calm => valueが格納される二次元配列ができる。<br>
+Objectは数字（0～）。$variable[0]->clamでvalueを取り出す。全部レコードを取り出すにはforeachを使用。
+
 
