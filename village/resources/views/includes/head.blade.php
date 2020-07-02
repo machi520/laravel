@@ -7,4 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- font awesome --}}
     <script src="https://kit.fontawesome.com/eb6a0d079d.js" crossorigin="anonymous"></script>
+    {{-- google charts --}}
+    {{-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> --}}
 </head>

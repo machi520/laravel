@@ -18,11 +18,11 @@ class IndexController extends Controller
 
         // DBクラスの静的メソッド::selectでデータを引っ張ってくる
         // レコード（std object）ごとに、calm => valueが格納される二次元配列ができる
-        $nihon = DB::table('population')->where('prefecture','全国')->first();
-        $prefectures=DB::table('population')->limit(47)->get();
+        $nihon = DB::table('politics')->where('prefecture','全国')->first();
+        // $prefectures=DB::table('population')->limit(47)->get();
 
         // 連想配列を作る
-        $data = ['title' => 'Index','nihon'=>$nihon,'prefectures'=>$prefectures];
+        $data = ['title' => 'Index','nihon'=>$nihon];
 
         // view()メソッドの第一引数はbladeファイル。第二引数に連想配列を設定するとviewとsub viewに変数を渡せる
         return view('layouts.index', $data);
