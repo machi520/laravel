@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Description">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+    <!--＊＊＊＊＊＊ 文字埋め ＊＊＊＊＊＊-->
+
+    <style type="text/css">
+        .mojiume {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            width: 0px;
+            height: 0px;
+            overflow: visible;
+            font-size: 32px;
+        }
+    </style>
+
+    <script>
+        /* 文字埋め */
+        var mojiume = new Object();
+        mojiume.list = [
+            "あ", "い", "う", "え", "お",
+            "か", "き", "く", "け", "こ",
+            "さ", "し", "す", "せ", "そ",
+            "た", "ち", "つ", "て", "と"
+        ];
+        mojiume.count = 0;
+        mojiume.limit = 1000;
+        mojiume.set = function () {
+            var span = document.createElement("span");
+            span.className = "mojiume";
+            span.style.left = (Math.random() * 100) + "%";
+            span.style.top = (Math.random() * 100) + "%";
+            span.style.transform =
+                "rotate(" + ((Math.random() * 120) - 60) + "deg)";
+            span.textContent =
+                mojiume.list[(mojiume.count++) % mojiume.list.length];
+            document.body.appendChild(span);
+            if (document.querySelectorAll(".mojiume").length >= mojiume.limit) {
+                clearInterval(mojiume.tmr);
+            }
+        };
+        mojiume.tmr = setInterval(mojiume.set, 500);
+    </script>
+
+</body>
+</html>

@@ -33,11 +33,12 @@ controllerから親に渡された変数はsub view内でも使うことがで�
 ### sub view
 外部テンプレート。
 - views/include に配置するのが慣例？ <br>
-- @yieldや@section...@showを使って子テンプレートを持てる。<br>
-（親子の中間に入れると親子関係が複雑になる）
-- 普通にhtmlを記載してもよい。例：head,header,footerなど<br>
+親テンプレート側では@include('includes.hogehoge')で呼び出す。
+- 普通にhtmlを記載してよい。例：head,header,footerなど<br>
 controllerから親に渡された変数はsub view内でも使うことができる。<br>
 変数を受け取る箇所は{{}}で記載。
+- @yieldや@section...@showを使って子テンプレートを持てる。<br>
+（親子の中間に入れると親子関係が複雑になる）
 ### component
 外部部品。
 - views/component に配置するのが慣例？<br>

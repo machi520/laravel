@@ -1,9 +1,4 @@
-# Modelについて
-modelはdatabase担当。
-laravel直下にdatabaseフォルダがある。
-
-## Eloquent ORM
-ORM object-relational-mapping。DBを簡単に扱うための、DBとプログラミング言語（model）の橋渡し機能。
+# SQLiteとmigration
 
 ## SQLite
 軽量コンパクトなオープンソースデータベースソフト。
@@ -76,35 +71,3 @@ DB::table('hogehoge')->insert(連想配列);
 - database/seeds/DatabaseSeederに登録<br>
 $this=>call(hotehote::class);
 -cmdで実行  php artisan db:seed
-
-## DBクラス
-クラスの場所：vendor\laravel\framework\src\Illuminate
-### SQLがしっかり書ける場合
-- controllerにDBクラスを追加<br>
-use Illuminate\Support\Facades\DB;
-- controllerの処理actionにDB::select（::insert,::update,::deleteなど）を書く。<br>
-$variable = DB::select('SQL',連想配列);<br>
-select()の第一引数はSQL文、第二引数はプレースホルダ（:hogehoge）の連想配列（['hogehoge'=>'hoge'])。
-- 結果$variableに、レコード（stdClass object）ごとに、field => valueが格納されるcollectionができる。<br>
-collectionとは、自身を操作するメソッドを持つ配列。<br>
-Object名は数字（0～）。$variable[int]->fieldでvalueを取り出す。全部レコードを取り出すには、foreachで順番にobjectを取り出す。
-### クエリビルダ
-SQLクエリ文を作成するためのメソッドチェーン。<br>
-SQL文をしっかり書かなくてもよい、php処理としてメソッドを呼び出すだけでDBへアクセスできる。
-- controllerにDBクラスを追加<br>
-use Illuminate\Support\Facades\DB;
-- controllerの処理actionにDB::tableなどを書く。
-$variable = DB::table('hogehoge')->get();<br>
-#### メソッド
-SQL文と違いwhereが先、次にorderBy、offset、limit、最後にgetやfirst。
-- where('field','演算記号やlike','value') レコードが無ければ戻り値はnull。<br>
-where()->where()と続けることで更に絞り込みができる。where()->orWhere()でor検索ができる。
-- orderBy('field','ascまたはdesc')  並び順
-- offset(int)  intの次の整数からレコードを取得
-- limit(int)  intの数だけレコードを取得
-- get(['field'])  検索されたすべてのレコードを返す。戻り値はcollection。
-- first()  検索結果のうち最初のレコードだけ返すので、戻り値はobjectになる（collectionじゃない)。
-- insert(連想配列)  ['field' => 'value']の連想配列を追加
-- update(連想配列)  whereでレコードを指定した後に更新
-- delete()   whereでレコードを指定した後に削除
-
