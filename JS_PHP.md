@@ -1,6 +1,9 @@
 # Javascriptとphp
 配列と連想配列について
 
+## phpの配列をjsで使うようにするにはjson形式で取得する。
+let variable = <?php echo json_encode($array); ?>;
+
 ## Javascript
 ### 連想配列の作り方（波括弧）
 - 後から中身を追加する場合は、まず空のオブジェクトを作る。
@@ -30,7 +33,10 @@ Object.keys(json_obj).map(function(obj){ return json_obj[key1]key2...更新処�
 ### 配列に対するメソッド（array)
 - 
 ### データ型の変換
-- parseInt()  文字型を整数に変換する
+- parseInt()  文字型を整数に変換。小数点以下は切り捨て
+- parseFloat()  文字列を実数に変換
+### 四捨五入
+- Math.
 
 
 ## php
@@ -53,6 +59,9 @@ foreach ($obj as $key => $value){ .$key...$value };
 - array_search  指定したvalueを検索して、条件に合う最初のkeyを返す。
 array_search('value', $array); 結果は1つのkey。
 - array_keys()
-
-## phpの配列をjsで使うようにするにはjson形式で取得する。
-let variable = <?php echo json_encode($array); ?>;
+### データ型の変換
+phpはデータ型が柔軟。勝手に解釈してくれる。
+### 四捨五入
+- round(int,桁); 第二引数で、小数点第何位まで表示させるかを指定
+- ceil(int) 切り上げ
+- floor(int) 切り捨て

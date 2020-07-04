@@ -31,10 +31,5 @@
 {{-- jQuery --}}
 <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
 
-<script>
-// phpから値の取得
-let nihon = <?php echo json_encode($nihon); ?>;
-</script>
-
 {{-- javascript --}}
 <script src="{{asset('js/foot.js')}}"></script>
