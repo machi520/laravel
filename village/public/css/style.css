@@ -229,8 +229,17 @@ tr:hover i:last-child{
 
 .graph {
     border: 1px solid #ccc;
-    padding: 2rem;;
+    padding: 2rem;
 }
 .display {
     display: none;
+}
+
+.syutten {
+    font-size: 0.8rem;
+    text-align: right;
+    padding-top: 0.5rem;
+}
+.t_title {
+    text-align: center;
 }

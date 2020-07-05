@@ -5,7 +5,7 @@
 <body>
     @include('includes.header')
 
-    @include('includes.content')
+    @include('includes.q2')
 
     @include('includes.footer')
 </body>

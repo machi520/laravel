@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 // ルートにアクセスした時
 // そのままfunction(){view('hogehoge')};と振り分けてもよいし、web.phpは共有だから簡素にしたいので、記載を短くするためにcontroller@methodで変数設定とか演算を行って一緒にviewに渡してもよい
-Route::get('/','IndexController@index');
+Route::get('/politics','IndexController@politics');
+Route::get('/religion','IndexController@religion');
+Route::get('/society', 'IndexController@society');
 
 Route::get('person','PersonController@index');
